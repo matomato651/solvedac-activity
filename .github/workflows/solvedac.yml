@@ -1,22 +1,4 @@
-name: Update Solved.ac Activity
+pip install -r requirements.txt
+uvicorn main:app --reload
 
-on:
-  schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
-
-jobs:
-  update:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Commit solved.ac activity
-        run: |
-          echo "Solved.ac streak on $(date)" >> solvedac.txt
-          git config user.name "kumma197"
-          git config user.email "hanbyeol67432@gmail.com"
-          git add .
-          git commit -m "Update solved.ac streak"
-          git push
+![mazandi profile](http://mazandi.herokuapp.com/api?handle={kumma197}&theme=dark)
